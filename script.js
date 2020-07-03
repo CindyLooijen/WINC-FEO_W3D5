@@ -1,3 +1,4 @@
+//Creating a task to add to the dom
 const addAListItemToDom = (contentTextNode, classListP, hashId, trueFalse) => {
   const newDiv = document.createElement("div");
   newDiv.classList = "todo-list-item";
@@ -23,6 +24,7 @@ const addAListItemToDom = (contentTextNode, classListP, hashId, trueFalse) => {
   document.querySelector(".todo-task-list").appendChild(newDiv);
 };
 
+//Adding an eventlistener to submitting the form (text input field or add button) to add a task to the list
 document.querySelector("form").addEventListener("submit", (event) => {
   event.preventDefault();
   const valueInputField = document.querySelector(".input-text-field");
@@ -33,6 +35,7 @@ document.querySelector("form").addEventListener("submit", (event) => {
   }
 });
 
+//Loading the data from GET request and writing it to the dom
 const loadingGatheredAPITasks = async () => {
   const result = await getAPICallToGetAllTasks(API_BASIS);
   let tasks = Object.keys(result).map((key) => ({
@@ -64,10 +67,12 @@ const loadingGatheredAPITasks = async () => {
 };
 loadingGatheredAPITasks();
 
+//Handling a POST request
 const makingAPOSTRequest = async (body) => {
   await postAPICallToAddTask(API_BASIS, body);
 };
 
+//Adding an eventlistener to the delete button and to the input field to edit a task
 document.addEventListener("click", (event) => {
   if (event.target.className === "delete-button") {
     makingADELETERequest(event.target.id);
@@ -92,10 +97,12 @@ document.addEventListener("click", (event) => {
   }
 });
 
+//Handling a DELETE request
 const makingADELETERequest = async (hashId) => {
   await deleteAPICallToDeleteATask(API_DELETE + hashId + ".json");
 };
 
+//Adding an eventlistener to the radiobutton to show a task is done (line-through) or not done
 document.addEventListener("change", (event) => {
   if (event.target.className === "checkbox") {
     const nextSibling = event.target.nextSibling;
@@ -115,6 +122,7 @@ document.addEventListener("change", (event) => {
   }
 });
 
+//Handling a PUT request to update a task
 const makingAPUTRequest = async (hashId, body) => {
   await putAPICallToUpdateATask(API_DELETE + hashId + ".json", body);
 };
