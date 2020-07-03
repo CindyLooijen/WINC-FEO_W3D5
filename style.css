@@ -1,0 +1,74 @@
+* {
+  font-family: "Raleway", sans-serif;
+}
+
+.input-text-field {
+  height: 30px;
+  width: 525px;
+}
+
+.submit-button {
+  height: 36.5px;
+  margin-left: 10px;
+}
+
+body {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.todo-task-list {
+  margin-top: 50px;
+}
+
+.todo-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px 0 0 0;
+  border: 1px solid lightgrey;
+  height: 50px;
+  background-color: rgb(211, 211, 211, 0.5);
+}
+
+.todo-list-item:hover {
+  background-color: rgb(211, 211, 211, 1);
+  transition: 1s;
+}
+
+.todo-list-item .done {
+  flex: 0 80%;
+  border: none;
+  background-color: rgb(211, 211, 211, 0.03);
+}
+
+.todo-list-item .not-done {
+  flex: 0 80%;
+  border: none;
+  background-color: rgb(211, 211, 211, 0.03);
+}
+.button-wrapper {
+  flex: 0 8%;
+}
+
+.delete-button {
+  width: 30px;
+  height: 35px;
+  background-image: url("prullenbak_cindy_klein.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+  margin-left: 15px;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.not-done {
+  text-decoration: none;
+}
