@@ -29,7 +29,7 @@ document.querySelector("form").addEventListener("submit", (event) => {
   if (valueInputField.value !== "") {
     addAListItemToDom(valueInputField.value, "not-done");
     makingAPOSTRequest({ description: valueInputField.value, done: false });
-    document.querySelector(".input-text-field").value = "";
+    valueInputField.value = "";
   }
 });
 
