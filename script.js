@@ -29,7 +29,6 @@ document.querySelector("form").addEventListener("submit", (event) => {
   event.preventDefault();
   const valueInputField = document.querySelector(".input-text-field");
   if (valueInputField.value !== "") {
-    addAListItemToDom(valueInputField.value, "not-done");
     makingAPOSTRequest({ description: valueInputField.value, done: false });
     valueInputField.value = "";
   }

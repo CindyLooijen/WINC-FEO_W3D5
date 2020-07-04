@@ -22,6 +22,9 @@ const postAPICallToAddTask = async (usedUrl, data) => {
       },
       body: JSON.stringify(data),
     });
+    const todoTaskList = document.querySelector(".todo-task-list");
+    todoTaskList.querySelectorAll("div").forEach((element) => element.remove());
+    await loadingGatheredAPITasks();
   } catch {
     console.log("Sorry het versturen van de data is niet gelukt");
   }
